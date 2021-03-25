@@ -20,15 +20,103 @@ Crie um endpoint que retorne sugestões para autocompletar cidades do Brasil.
 
 Essas respostas têm o objetivo de fornecer orientação. Os valores exatos podem variar com base na fonte de dados e no algoritmo de pontuação.
 
-### Quase partida
+### Quase match
 
-GET /suggestions?q=Londo&latitude=43.70011&longitude=-79.4163
+GET /suggestions?q=Campinas
 ```json
 {
   "suggestions": [
     {
-        // TODO:
-    ]
+      "name": "Campinas do Sul - RS",
+      "latitude": -27.7174,
+      "longitude": -52.6248,
+      "score": 1
+    },
+    {
+      "name": "Campinas do Piauí - PI",
+      "latitude": -7.6593,
+      "longitude": -41.8775,
+      "score": 1
+    },
+    {
+      "name": "Campinas - SP",
+      "latitude": -22.9053,
+      "longitude": -47.0659,
+      "score": 1
+    },
+    {
+      "name": "Nova Campina - SP",
+      "latitude": -24.1224,
+      "longitude": -48.9022,
+      "score": 0.93
+    },
+    {
+      "name": "Campina das Missões - RS",
+      "latitude": -27.9888,
+      "longitude": -54.8416,
+      "score": 0.88
+    },
+    {
+      "name": "Campina Grande - PB",
+      "latitude": -7.22196,
+      "longitude": -35.8731,
+      "score": 0.88
+    },
+    {
+      "name": "Campina do Monte Alegre - SP",
+      "latitude": -23.5895,
+      "longitude": -48.4758,
+      "score": 0.88
+    },
+    {
+      "name": "Campina Verde - MG",
+      "latitude": -19.5382,
+      "longitude": -49.4862,
+      "score": 0.88
+    },
+    {
+      "name": "Campina Grande do Sul - PR",
+      "latitude": -25.3044,
+      "longitude": -49.0551,
+      "score": 0.88
+    },
+    {
+      "name": "Campina da Lagoa - PR",
+      "latitude": -24.5893,
+      "longitude": -52.7976,
+      "score": 0.88
+    },
+    {
+      "name": "Campinaçu - GO",
+      "latitude": -13.787,
+      "longitude": -48.5704,
+      "score": 0.88
+    },
+    {
+      "name": "Campina do Simão - PR",
+      "latitude": -25.0802,
+      "longitude": -51.8237,
+      "score": 0.88
+    },
+    {
+      "name": "Carpina - PE",
+      "latitude": -7.84566,
+      "longitude": -35.2514,
+      "score": 0.86
+    },
+    {
+      "name": "Apiúna - SC",
+      "latitude": -27.0375,
+      "longitude": -49.3885,
+      "score": 0.53
+    },
+    {
+      "name": "Pinhais - PR",
+      "latitude": -25.4429,
+      "longitude": -49.1927,
+      "score": 0.23
+    }
+  ]
 }
 ```
 
