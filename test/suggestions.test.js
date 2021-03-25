@@ -4,9 +4,9 @@ const request = require('supertest')(app);
 
 describe('GET /suggestions', function () {
     describe('with a non-existent city', function () {
-        var response;
+        let response;
 
-        before(function (done) {
+        beforeAll(function (done) {
             request
                 .get('/suggestions?q=UmaCidadeAleatoriaNoMeioDoNada')
                 .end(function (err, res) {
@@ -27,9 +27,9 @@ describe('GET /suggestions', function () {
     });
 
     describe('with a valid city', function () {
-        var response;
+        let response;
 
-        before(function (done) {
+        beforeAll(function (done) {
             request
                 .get('/suggestions?q=Campinas')
                 .end(function (err, res) {

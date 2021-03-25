@@ -13,7 +13,7 @@ Crie um endpoint que retorne sugestões para autocompletar cidades do Brasil.
   - cada sugestão tem um nome que pode ser usado para eliminar a ambigüidade entre locais com nomes semelhantes
   - cada sugestão tem uma latitude e longitude
 - todos os testes funcionais devem passar (testes adicionais podem ser implementados conforme necessário)
-- recomendamos que o deploy do aplicativo final seja feito no [Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) pela facilidade
+- recomendamos que o deploy do aplicativo final seja feito no [Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) pela facilidade da ferramenta
 - sinta-se à vontade para adicionar mais recursos, se desejar!
 
 ## Exemplo de Resposta
@@ -131,7 +131,7 @@ GET /suggestions?q=UmaCidadeAleatoriaNoMeioDoNada
 
 ## Requisitos não funcionais
 
-- Todo o código deve ser escrito em Python.
+- Todo o código deve ser escrito em NodeJS.
 - Devem ser implementadas mitigações para lidar com altos níveis de tráfego.
 - O desafio deve ser enviado como solicitação pull contra este repo (faça um fork e criar um pull request).
 - Documentação e facilidade de manutenção são uma vantagem.
@@ -145,8 +145,8 @@ Você pode encontrar os dados necessários junto com sua descrição e documenta
 Usaremos os seguintes critérios para avaliar sua solução:
 
 - Capacidade de seguir instruções
-- Experiência do desenvolvedor (como é fácil executar sua solução localmente, quão clara é sua documentação, etc)
-- Correção da solução
+- Experiência do desenvolvedor (quão fácil é executar sua solução localmente, quão clara é sua documentação, etc...)
+- Quão correta é a solução
 - Desempenho
 - Monitoramento (métricas de engenharia e de negócio)
 - Testes (qualidade e cobertura)
@@ -158,6 +158,8 @@ Não há problema em nos fazer perguntas!
 
 Sabemos que o tempo para este projeto é limitado e é difícil criar uma solução "perfeita", por isso vamos considerar isso junto com sua experiência ao avaliar o envio.
 
+Sinta-se livre para alterar as bibliotecas utilizadas para o servidor e para os testes.
+
 ## Começando
 
 ### Pré-requisitos
@@ -165,26 +167,41 @@ Sabemos que o tempo para este projeto é limitado e é difícil criar uma soluç
 Você vai precisar de:
 
 - Git
-- python3
+- node
 
 ### Configurando seu ambiente
 
-Comece criando um fork deste repositório e clonando seu fork. O GitHub possui aplicativos para Mac e Windows que facilitam isso.
+1. Comece criando um fork deste repositório e clonando seu fork. O GitHub possui aplicativos para Mac e Windows que facilitam isso.
 
-Instale o python3.
+2. Instale NodeJS da maneira que preferir (recomendamos utilizar o [nvm](https://github.com/nvm-sh/nvm#install--update-script)).
+
 
 ### Configurando o projeto
 
-// TODO: intruções de como configurar o projeto python
+No diretório do projeto rode:
+
+```console
+npm start
+```
 
 ### Executando os testes
 
 O conjunto de testes pode ser executado com:
 
-// TODO: instruções de como rodar os testes
+```console
+npm test
+```
 
 ### Iniciando o aplicativo
 
 Para iniciar um servidor local, execute:
 
-// TODO: instruções de como rodar local
+```console
+npm start
+```
+
+isso deve produzir um output similar a:
+
+```console
+Server running at http://127.0.0.1:3000/suggestions
+```
