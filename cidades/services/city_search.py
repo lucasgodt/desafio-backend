@@ -1,3 +1,4 @@
+from fuzzywuzzy import fuzz
 from cidades.models import City
 
 def exact_search(search_entry):
@@ -21,15 +22,22 @@ def similar_search(search_entry):
                 cidades.append(cidade.serialize(score))
     return cidades
 
+def partial_ratio_search(search_entry):
+    MINIMUM_TOKEN_SIMILARITY = 75
+    all_cities = City.objects.all()
+    cidades = []
+    for cidade in all_cities:
+        similarity = fuzz.partial_ratio(search_entry, cidade.nome)
+        if similarity > MINIMUM_TOKEN_SIMILARITY:
+            cidades.append(cidade.serialize(similarity/100))
+    return cidades
+
 def search(search_entry):
     cidades = []
-
-    exact = exact_search(search_entry)
-    if len(exact) > 0:
-        cidades.extend(exact)
     
-    similar = similar_search(search_entry)
-    if len(similar) > 0:
-        cidades.extend(similar)
+    partial_ratio = partial_ratio_search(search_entry)
+    if len(partial_ratio) > 0:
+        partial_ratio = sorted(partial_ratio, key=lambda k: k['score'], reverse=True)
+        cidades.extend(partial_ratio)
     
     return cidades
