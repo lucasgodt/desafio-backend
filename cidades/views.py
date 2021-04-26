@@ -1,12 +1,12 @@
-import json
 from django.http import JsonResponse
-from cidades.models import City
 from cidades.services.city_search import search
 
 # Create your views here.
 def index(request):
     if request.method == "GET":
-        search_entry = request.GET.get('q')
+        search_entry = request.GET.get("q")
+        if search_entry=="":
+            return JsonResponse({"error": "Query parameter required."}, status=400)
         suggestions = search(search_entry)
         cidades = {
             "suggestions":  suggestions
